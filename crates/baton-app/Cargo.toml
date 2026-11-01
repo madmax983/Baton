@@ -1,0 +1,34 @@
+[package]
+name = "baton-app"
+description = "Baton: a failover lab for autumn-web 0.9's slot fleet — hosts that split the slot range under leases and epochs, a standby that restores from the replica, and a console that kills them and counts what was lost."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+default-run = "baton-app"
+
+[dependencies]
+relay = { path = "../relay" }
+anyhow = { workspace = true }
+autumn-web = { workspace = true }
+chrono = { workspace = true }
+diesel = { workspace = true }
+diesel-async = { workspace = true }
+diesel_migrations = { workspace = true }
+maud = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+reqwest = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+autumn-web = { workspace = true, features = ["test-support"] }
+proptest = { workspace = true }
+tempfile = { workspace = true }
+
+[lints]
+workspace = true
