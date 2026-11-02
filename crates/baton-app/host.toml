@@ -48,7 +48,8 @@ restore_missing = true
 owner = "{{name}}"
 slots = ["{{slots}}"]
 # Short, so a failover happens in front of you: a dead owner's lease lapses
-# within ~6 s, and a live one renews every 2 s.
+# within ~6 s, and a live one renews every 2 s. A standby serves at most
+# lease_secs + lease_secs / 3 = 8 s after the last renew.
 lease_secs = 6
 
 [replication]
